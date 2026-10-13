@@ -1,0 +1,45 @@
+1C training 8.5.1.1150; compatibility Version8_5_1; file database; no configured users/roles
+PASS|Q2.fixture.before|400
+PASS|Q2.fixture.agent|200
+PASS|Q2.fixture.example|200
+PASS|Q5.rows|2
+PASS|Q5.A|200
+PASS|Q5.B|50
+PASS|Q2.one-active.real-repeats|200
+OBSERVED|Q2.no-active.rows=1
+OBSERVED|Q2.no-active.sum-null=Да
+OBSERVED|Q2.empty-document.rows=1
+OBSERVED|Q2.empty-document.sum-null=Да
+PASS|Q3.before.rows|1
+PASS|Q3.agent.rows|3
+PASS|Q3.A.comment|допущен
+PASS|Q3.B.null|Да
+PASS|Q3.C.null|Да
+PASS|Q4.agent.fixture|1:A:10:Да;2:B:20:Да;3:A:10:Да;4:C:0:Нет;5:Z:0:Да;
+PASS|Q4.example.fixture|1:A:10:Да;2:B:20:Да;3:A:10:Да;4:C:0:Нет;5:Z:0:Да;
+PASS|Q4.agent.empty|
+PASS|Q4.example.empty|
+PASS|Q4.agent.single-zero|1:Z:0:Да;
+PASS|Q4.example.single-zero|1:Z:0:Да;
+PASS|Q4.agent.all-missing|1:C:0:Нет;2:C:0:Нет;
+PASS|Q4.example.all-missing|1:C:0:Нет;2:C:0:Нет;
+PASS|Q4.agent.repeats|1:A:10:Да;2:A:10:Да;3:A:10:Да;
+PASS|Q4.example.repeats|1:A:10:Да;2:A:10:Да;3:A:10:Да;
+PASS|R.before.check.bsl
+PASS|R.after.check.bsl
+PASS|D.after.check.bsl
+PASS|D.before.trace-length|1
+PASS|D.before.false-success|Успех
+PASS|D.no-active-transaction|Нет
+PASS|Q1.original.1|
+PASS|Q1.proposed.1|
+PASS|Q1.original.2|A:10;B:20;
+PASS|Q1.proposed.2|A:10;B:20;
+PASS|Q1.original.3|A:10;B:20;
+PASS|Q1.proposed.3|A:10;B:20;
+PASS|Q1.original.4|B:20;
+PASS|Q1.proposed.4|A:10;B:20;
+PASS|Q1.original.5|B:20;
+PASS|Q1.proposed.5|A:10;B:20;
+PASS|Q4.agent.case-and-space|1:a:10:Да;2:A :10:Да;
+FAIL|{ОбщийМодуль.ПлатформенныеПроверки.Модуль(3)}: Q4.example.case-and-space: ожидалось 1:a:10:Да;2:A :10:Да;, получено 1:a:0:Нет;2:A :0:Нет;

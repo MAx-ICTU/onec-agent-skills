@@ -1,0 +1,9 @@
+Date: 2026-10-13 (Europe/Moscow)
+Python: 3.12.14
+PASS: 3 independent skill folders copied to .agents/skills; hashes identical.
+PASS: skill-creator validated all 3 copies; relative query reference present.
+PASS: UI metadata parses, descriptions meet 25..64 characters; implicit invocation not disabled.
+PASS: check_files returns failure for a deliberately broken local link.
+PASS: check_files returns failure for an empty skill description.
+PASS: source project files preserved; all test mutations isolated in a temporary directory.
+NOT TESTED: automatic discovery or invocation in a running Codex CLI/IDE.

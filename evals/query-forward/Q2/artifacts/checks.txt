@@ -1,0 +1,19 @@
+COMMAND (PowerShell):
+& '{{PYTHON}}' '{{RUN_ROOT}}\Q2\artifacts\verify.py' 1> '{{RUN_ROOT}}\Q2\artifacts\stdout.txt' 2> '{{RUN_ROOT}}\Q2\artifacts\stderr.txt'
+EXIT CODE: 0
+STDOUT:
+{"case": "provided_fixture", "status": "PASS", "qualifying_row_ids": [1, 2], "mathematical_total": "200"}
+{"fixture_original_join_row_ids": [1, 1, 2, 2], "fixture_original_total": "400", "wrong_distinct_amount_total": "100", "wrong_distinct_product_amount_total": "100"}
+{"case": "no_sales", "status": "PASS", "qualifying_row_ids": [], "mathematical_total": "0"}
+{"case": "no_tags", "status": "PASS", "qualifying_row_ids": [], "mathematical_total": "0"}
+{"case": "inactive_only", "status": "PASS", "qualifying_row_ids": [], "mathematical_total": "0"}
+{"case": "one_active", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "multiple_active", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "mixed_active_inactive", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "real_equal_repeats", "status": "PASS", "qualifying_row_ids": [1, 2], "mathematical_total": "200"}
+{"case": "equal_amount_different_products", "status": "PASS", "qualifying_row_ids": [1, 2], "mathematical_total": "200"}
+{"case": "absent_inactive_active", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "decimal_zero_negative", "status": "PASS", "qualifying_row_ids": [1, 2, 3], "mathematical_total": "100.00"}
+PASS: 11 cases; row multisets, source row IDs and mathematical totals checked.
+NOT RUN: 1C parsing, execution, empty-set aggregate semantics, query plans or timings.
+STDERR:

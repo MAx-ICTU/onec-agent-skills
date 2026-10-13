@@ -1,0 +1,30 @@
+{
+  "phase": "Discovery before actual platform execution; not-run describes only this earlier instant",
+  "superseded_by": "environment.json and logs/results.txt",
+  "observations": {
+    "checked_at_utc": "2026-10-13T00:08:19.4590462Z",
+    "commands_in_path": [],
+    "standard_installation_directories": [
+      {
+        "path": "C:/Program Files/1cv8",
+        "exists": false
+      },
+      {
+        "path": "C:/Program Files (x86)/1cv8",
+        "exists": false
+      }
+    ],
+    "executables_in_standard_directories": [],
+    "installed_products": [
+      {
+        "DisplayName": "1С:Предприятие 8 (учебная версия) (8.5.1.1150)",
+        "DisplayVersion": "8.5.1.1150",
+        "InstallLocation": "C:\\Program Files (x86)\\1cv8t\\8.5.1.1150\\"
+      }
+    ],
+    "running_1c_processes": [],
+    "test_database_artifacts_in_project": [],
+    "scope": "PATH, two standard installation directories, uninstall registry, process metadata, project test artifacts; no whole-machine inventory or credential/connection-string reads",
+    "platform_execution": "not-run"
+  }
+}

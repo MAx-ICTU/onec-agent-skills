@@ -1,0 +1,8 @@
+13.10.2026; Python 3.12.14; commands executed from project root.
+Command (validator installation path normalized): python scripts/check_files.py --skill-validator <actual-skill-creator>/scripts/quick_validate.py
+Exit code: 0
+skill-creator/onec-refactor: Skill is valid!
+skill-creator/onec-debug: Skill is valid!
+skill-creator/onec-query-review: Skill is valid!
+Checked 55 text files; 3 skill manifests and portable folders; 0 errors.
+Validator SHA-256: 6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806

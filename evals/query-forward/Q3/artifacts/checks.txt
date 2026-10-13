@@ -1,0 +1,36 @@
+Runner: run_checks.py (saved exact source)
+Model: check_model.py (saved exact source)
+Executed child command argv (shell=False): ["{{PYTHON}}", "{{RUN_ROOT}}\\Q3\\artifacts\\check_model.py"]
+Working directory: {{RUN_ROOT}}\Q3\artifacts
+--- actual stdout ---
+STATIC: proposed query moves only the active condition from WHERE to ON
+
+DATA before: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"]]
+
+DATA fixed: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"], ["B", null], ["C", null]]
+
+DATA contract: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"], ["B", null], ["C", null]]
+
+DATA where_or_null: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"], ["C", null]]
+
+CASE empty: [] PASS
+
+CASE no_permissions: [["A", null], ["B", null]] PASS
+
+CASE one_active: [["A", "yes"]] PASS
+
+CASE one_inactive: [["A", null]] PASS
+
+CASE active_empty_comment: [["A", ""]] PASS
+
+CASE inactive_empty_comment: [["A", null]] PASS
+
+CASE multiple_active_distinct_items: [["A", "same"], ["B", "same"], ["C", null]] PASS
+
+EXHAUSTIVE finite states: 125 PASS
+
+LIMIT: no 1C compilation/execution, platform NULL check, DB plan or timing performed
+
+--- actual stderr ---
+--- exit code ---
+0

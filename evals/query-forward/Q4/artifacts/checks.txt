@@ -1,0 +1,26 @@
+COMMAND:
+& '{{PYTHON}}' '{{RUN_ROOT}}/Q4/artifacts/verify_model.py'
+
+STDOUT:
+MODEL ONLY: Python exact string equality; no 1C, query compilation, DB plan or timings.
+provided result (id, product, price, found):
+1, A, 10.00, True
+2, B, 20.00, True
+3, A, 10.00, True
+4, C, 0.00, False
+5, Z, 0.00, True
+modeled Execute calls: before=5, proposed=1
+PASS empty
+PASS one found resets false
+PASS one absent resets true
+PASS one zero resets false
+PASS all absent
+PASS no prices
+PASS duplicate zero
+PASS empty key matched
+PASS 300 reproducible generated cases (seed=20261013)
+PASS total cases=309; row identity/order/multiplicity/value/found and stale-value reset checked
+
+STDERR:
+
+EXIT CODE: 0

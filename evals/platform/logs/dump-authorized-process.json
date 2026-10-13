@@ -1,0 +1,11 @@
+{
+  "stage": "dump-authorized",
+  "started_at_utc": "2026-10-13T00:10:59.9106377Z",
+  "arguments": "DESIGNER /F \"{{RUN_ROOT}}\\platform\\base\" /DumpConfigToFiles \"{{RUN_ROOT}}\\platform\\config\" /Out \"{{RUN_ROOT}}\\platform\\dump-authorized.log\" /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:11:00.9800713Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

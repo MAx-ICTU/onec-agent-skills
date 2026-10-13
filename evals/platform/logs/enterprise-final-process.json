@@ -1,0 +1,11 @@
+{
+  "stage": "enterprise-final",
+  "started_at_utc": "2026-10-13T00:29:18.3566146Z",
+  "arguments": "ENTERPRISE /F \"{{RUN_ROOT}}\\platform/base-final\" /Out \"{{RUN_ROOT}}\\platform/enterprise-final.log\" /L ru /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:29:20.4050047Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

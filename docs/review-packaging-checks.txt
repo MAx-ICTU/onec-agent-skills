@@ -1,0 +1,14 @@
+13.10.2026; Python 3.12.14; commands executed from project root.
+Command (validator installation path normalized): python scripts/check_packaging.py
+Exit code: 0
+PACKAGING CHECKS ONLY: file copies, links and metadata; no CLI/IDE/1C execution.
+test_each_folder_copies_without_repository (__main__.PackagingChecks.test_each_folder_copies_without_repository) ... ok
+test_existing_repository_file_is_not_a_portable_dependency (__main__.PackagingChecks.test_existing_repository_file_is_not_a_portable_dependency) ... ok
+test_missing_reference_and_empty_description (__main__.PackagingChecks.test_missing_reference_and_empty_description) ... ok
+test_reference_link_encoded_escape_and_absolute_path (__main__.PackagingChecks.test_reference_link_encoded_escape_and_absolute_path) ... ok
+test_ui_resource_cannot_escape_folder (__main__.PackagingChecks.test_ui_resource_cannot_escape_folder) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.305s
+
+OK

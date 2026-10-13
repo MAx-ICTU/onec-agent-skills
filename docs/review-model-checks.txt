@@ -1,0 +1,25 @@
+13.10.2026; Python 3.12.14; commands executed from project root.
+Command (validator installation path normalized): python scripts/check_examples.py
+Exit code: 0
+MODEL CHECKS ONLY: Decimal / SQLite / Python; 1C execution is NOT checked.
+test_documented_results (__main__.ArithmeticExamples.test_documented_results) ... ok
+test_repeated_rows_are_not_collapsed (__main__.ArithmeticExamples.test_repeated_rows_are_not_collapsed) ... ok
+test_single_rounding_changes_business_result (__main__.ArithmeticExamples.test_single_rounding_changes_business_result) ... ok
+test_deduplicating_input_loses_correspondence (__main__.BatchExamples.test_deduplicating_input_loses_correspondence) ... ok
+test_empty_and_single_row (__main__.BatchExamples.test_empty_and_single_row) ... ok
+test_rows_duplicates_missing_and_zero (__main__.BatchExamples.test_rows_duplicates_missing_and_zero) ... ok
+test_fixed_failure_has_no_commit_or_success (__main__.ExceptionFlowExamples.test_fixed_failure_has_no_commit_or_success) ... ok
+test_success_path_unchanged (__main__.ExceptionFlowExamples.test_success_path_unchanged) ... ok
+test_swallowed_failure_continues (__main__.ExceptionFlowExamples.test_swallowed_failure_continues) ... ok
+test_correct_grouping_needs_no_repair (__main__.RelationalExamples.test_correct_grouping_needs_no_repair) ... ok
+test_distinct_amount_is_wrong_fix (__main__.RelationalExamples.test_distinct_amount_is_wrong_fix) ... ok
+test_join_multiplication_and_membership_fix (__main__.RelationalExamples.test_join_multiplication_and_membership_fix) ... ok
+test_left_join_preserves_inactive_and_absent_rows (__main__.RelationalExamples.test_left_join_preserves_inactive_and_absent_rows) ... ok
+test_or_null_is_not_equivalent_to_on_filter (__main__.RelationalExamples.test_or_null_is_not_equivalent_to_on_filter) ... ok
+test_filter_placement_changes_result (__main__.SliceExamples.test_filter_placement_changes_result) ... ok
+test_period_boundary_and_no_records (__main__.SliceExamples.test_period_boundary_and_no_records) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+OK

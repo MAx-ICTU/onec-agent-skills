@@ -1,0 +1,11 @@
+{
+  "stage": "load-retry1",
+  "started_at_utc": "2026-10-13T00:15:47.7375911Z",
+  "arguments": "DESIGNER /F \"{{RUN_ROOT}}\\platform\\base\" /LoadConfigFromFiles \"{{RUN_ROOT}}\\platform\\config\" /UpdateDBCfg /Out \"{{RUN_ROOT}}\\platform\\load-retry1.log\" /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:15:48.9397867Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

@@ -1,0 +1,152 @@
+FINAL CHECKS — 2026-10-13 UTC; author reruns, not evaluator original logs.
+Python: 3.12.14
+Paths below are relative to project; Python/YAML validator are external test tools.
+
+PASS preservation: 11 intentional existing-file changes; all other pre-existing files retained byte-for-byte, no deletions.
+PASS input SHA256, frozen skill revisions, no expected data, unchanged raw responses/proposals/model scripts; current reference equals Q4-repeat revision.
+PASS exported XML parses; prepare.py expanded source matches final actually executed configuration (UTF-8/newline normalization only).
+COMMAND: python -X utf8 evals/platform/prepare.py {{WORKSPACE}}\work\query-forward-20261013\portable-prepared
+Traceback (most recent call last):
+  File "{{WORKSPACE}}\outputs\onec-agent-skills\evals\platform\prepare.py", line 38, in <module>
+    prepare(args.target)
+  File "{{WORKSPACE}}\outputs\onec-agent-skills\evals\platform\prepare.py", line 13, in prepare
+    target.mkdir(parents=True, exist_ok=False)
+  File "{{PYTHON_RUNTIME}}\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [WinError 183] Невозможно создать файл, так как он уже существует: '{{WORKSPACE}}\\work\\query-forward-20261013\\portable-prepared'
+EXIT CODE: 1
+
+PASS prepare.py refuses an existing test directory; no existing database reused.
+COMMAND: python -X utf8 evals/query-forward/Q2/artifacts/verify.py
+{"case": "provided_fixture", "status": "PASS", "qualifying_row_ids": [1, 2], "mathematical_total": "200"}
+{"fixture_original_join_row_ids": [1, 1, 2, 2], "fixture_original_total": "400", "wrong_distinct_amount_total": "100", "wrong_distinct_product_amount_total": "100"}
+{"case": "no_sales", "status": "PASS", "qualifying_row_ids": [], "mathematical_total": "0"}
+{"case": "no_tags", "status": "PASS", "qualifying_row_ids": [], "mathematical_total": "0"}
+{"case": "inactive_only", "status": "PASS", "qualifying_row_ids": [], "mathematical_total": "0"}
+{"case": "one_active", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "multiple_active", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "mixed_active_inactive", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "real_equal_repeats", "status": "PASS", "qualifying_row_ids": [1, 2], "mathematical_total": "200"}
+{"case": "equal_amount_different_products", "status": "PASS", "qualifying_row_ids": [1, 2], "mathematical_total": "200"}
+{"case": "absent_inactive_active", "status": "PASS", "qualifying_row_ids": [1], "mathematical_total": "100"}
+{"case": "decimal_zero_negative", "status": "PASS", "qualifying_row_ids": [1, 2, 3], "mathematical_total": "100.00"}
+PASS: 11 cases; row multisets, source row IDs and mathematical totals checked.
+NOT RUN: 1C parsing, execution, empty-set aggregate semantics, query plans or timings.
+EXIT CODE: 0
+
+COMMAND: python -X utf8 evals/query-forward/Q3/artifacts/check_model.py
+STATIC: proposed query moves only the active condition from WHERE to ON
+DATA before: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"]]
+DATA fixed: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"], ["B", null], ["C", null]]
+DATA contract: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"], ["B", null], ["C", null]]
+DATA where_or_null: [["A", "\u0434\u043e\u043f\u0443\u0449\u0435\u043d"], ["C", null]]
+CASE empty: [] PASS
+CASE no_permissions: [["A", null], ["B", null]] PASS
+CASE one_active: [["A", "yes"]] PASS
+CASE one_inactive: [["A", null]] PASS
+CASE active_empty_comment: [["A", ""]] PASS
+CASE inactive_empty_comment: [["A", null]] PASS
+CASE multiple_active_distinct_items: [["A", "same"], ["B", "same"], ["C", null]] PASS
+EXHAUSTIVE finite states: 125 PASS
+LIMIT: no 1C compilation/execution, platform NULL check, DB plan or timing performed
+EXIT CODE: 0
+
+COMMAND: python -X utf8 evals/query-forward/Q4/artifacts/verify_model.py
+MODEL ONLY: Python exact string equality; no 1C, query compilation, DB plan or timings.
+provided result (id, product, price, found):
+1, A, 10.00, True
+2, B, 20.00, True
+3, A, 10.00, True
+4, C, 0.00, False
+5, Z, 0.00, True
+modeled Execute calls: before=5, proposed=1
+PASS empty
+PASS one found resets false
+PASS one absent resets true
+PASS one zero resets false
+PASS all absent
+PASS no prices
+PASS duplicate zero
+PASS empty key matched
+PASS 300 reproducible generated cases (seed=20261013)
+PASS total cases=309; row identity/order/multiplicity/value/found and stale-value reset checked
+EXIT CODE: 0
+
+COMMAND: python -X utf8 evals/query-forward/Q4-repeat/artifacts/check_model.py
+MODEL: exact Python equality; no 1C runtime
+sample result: [[1, "A", 10, true], [2, "B", 20, true], [3, "A", 10, true], [4, "C", 0, false], [5, "Z", 0, true]]
+Analytical BSL invocation count for sample: original=5; proposed=1 packet (2 statements); not measured in 1C
+PASS empty []
+PASS one-present [[90, "A", 10, true]]
+PASS one-missing [[90, "C", 0, false]]
+PASS one-zero [[90, "Z", 0, true]]
+PASS all-missing [[31, "A", 0, false], [2, "B", 0, false]]
+PASS repeats-and-order [[31, "A", 10, true], [2, "B", 20, true], [9, "A", 10, true]]
+PASS empty-string-key [[7, "", 0, true], [4, "C", 0, false]]
+PASS exhaustive exact-equality finite model datasets: 3267
+PASS illustrative ASCII equality predicate: [[41, "a", 10, true], [2, "A ", 10, true], [11, "A", 10, true], [8, "b ", 0, true], [19, "missing", 0, false]]
+COUNTEREXAMPLE toy query equality vs exact string dictionary: 'a' and 'A ' miss
+BOUNDARY: ASCII predicate does not validate 1C collation or Unicode rules
+COUNTEREXAMPLE returning price rows only: 3 returned vs 5 required source results
+PASS static text checks (not a BSL parser/compiler)
+ALL MODEL CHECKS PASSED
+EXIT CODE: 0
+
+COMMAND: python -X utf8 scripts/check_examples.py
+MODEL CHECKS ONLY: Decimal / SQLite / Python; 1C execution is NOT checked.
+test_documented_results (__main__.ArithmeticExamples.test_documented_results) ... ok
+test_repeated_rows_are_not_collapsed (__main__.ArithmeticExamples.test_repeated_rows_are_not_collapsed) ... ok
+test_single_rounding_changes_business_result (__main__.ArithmeticExamples.test_single_rounding_changes_business_result) ... ok
+test_deduplicating_input_loses_correspondence (__main__.BatchExamples.test_deduplicating_input_loses_correspondence) ... ok
+test_empty_and_single_row (__main__.BatchExamples.test_empty_and_single_row) ... ok
+test_rows_duplicates_missing_and_zero (__main__.BatchExamples.test_rows_duplicates_missing_and_zero) ... ok
+test_fixed_failure_has_no_commit_or_success (__main__.ExceptionFlowExamples.test_fixed_failure_has_no_commit_or_success) ... ok
+test_success_path_unchanged (__main__.ExceptionFlowExamples.test_success_path_unchanged) ... ok
+test_swallowed_failure_continues (__main__.ExceptionFlowExamples.test_swallowed_failure_continues) ... ok
+test_correct_grouping_needs_no_repair (__main__.RelationalExamples.test_correct_grouping_needs_no_repair) ... ok
+test_distinct_amount_is_wrong_fix (__main__.RelationalExamples.test_distinct_amount_is_wrong_fix) ... ok
+test_join_multiplication_and_membership_fix (__main__.RelationalExamples.test_join_multiplication_and_membership_fix) ... ok
+test_left_join_preserves_inactive_and_absent_rows (__main__.RelationalExamples.test_left_join_preserves_inactive_and_absent_rows) ... ok
+test_or_null_is_not_equivalent_to_on_filter (__main__.RelationalExamples.test_or_null_is_not_equivalent_to_on_filter) ... ok
+test_filter_placement_changes_result (__main__.SliceExamples.test_filter_placement_changes_result) ... ok
+test_period_boundary_and_no_records (__main__.SliceExamples.test_period_boundary_and_no_records) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+OK
+EXIT CODE: 0
+
+COMMAND: python -X utf8 scripts/check_packaging.py
+PACKAGING CHECKS ONLY: file copies, links and metadata; no CLI/IDE/1C execution.
+test_each_folder_copies_without_repository (__main__.PackagingChecks.test_each_folder_copies_without_repository) ... ok
+test_existing_repository_file_is_not_a_portable_dependency (__main__.PackagingChecks.test_existing_repository_file_is_not_a_portable_dependency) ... ok
+test_missing_reference_and_empty_description (__main__.PackagingChecks.test_missing_reference_and_empty_description) ... ok
+test_reference_link_encoded_escape_and_absolute_path (__main__.PackagingChecks.test_reference_link_encoded_escape_and_absolute_path) ... ok
+test_ui_resource_cannot_escape_folder (__main__.PackagingChecks.test_ui_resource_cannot_escape_folder) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.857s
+
+OK
+EXIT CODE: 0
+
+COMMAND: python -X utf8 scripts/check_files.py --skill-validator {{SKILL_CREATOR}}\scripts\quick_validate.py
+skill-creator/onec-refactor: Skill is valid!
+skill-creator/onec-debug: Skill is valid!
+skill-creator/onec-query-review: Skill is valid!
+Checked 137 text files; 3 skill manifests and portable folders; 0 errors.
+EXIT CODE: 0
+
+All required file/model/portability checks above passed. Platform commands/results are recorded separately in evals/platform/.
+
+Final file/link check after evidence index and discovery record:
+COMMAND: python scripts/check_files.py
+Checked 138 text files; 3 skill manifests and portable folders; 0 errors.
+EXIT CODE: 0
+
+Pre-publication privacy normalization, 2026-10-13:
+Personal home/cache paths in this log and platform dump.log replaced with placeholders; original local evidence retained. No code, model outputs, source revisions or assertions changed.
+COMMAND: python scripts/check_files.py
+Checked 138 text files; 3 skill manifests and portable folders; 0 errors.
+EXIT CODE: 0

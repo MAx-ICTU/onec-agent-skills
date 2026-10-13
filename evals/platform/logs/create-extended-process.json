@@ -1,0 +1,11 @@
+{
+  "stage": "create-extended",
+  "started_at_utc": "2026-10-13T00:19:27.3721524Z",
+  "arguments": "CREATEINFOBASE File=\"{{RUN_ROOT}}\\platform\\base-extended\"; /Out \"{{RUN_ROOT}}\\platform\\create-extended.log\" /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:19:28.0066206Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

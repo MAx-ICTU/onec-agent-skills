@@ -1,0 +1,11 @@
+{
+  "stage": "create",
+  "started_at_utc": "2026-10-13T00:09:40.1043271Z",
+  "arguments": "CREATEINFOBASE File=\"{{RUN_ROOT}}\\platform\\base\"; /Out \"{{RUN_ROOT}}\\platform\\create.log\" /DumpResult \"{{RUN_ROOT}}\\platform\\create-result.txt\" /L ru /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:09:41.2732919Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

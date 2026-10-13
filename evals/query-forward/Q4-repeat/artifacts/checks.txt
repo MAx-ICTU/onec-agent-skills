@@ -1,0 +1,27 @@
+Shell: PowerShell
+Executed command:
+& '{{PYTHON}}' -X utf8 '{{RUN_ROOT}}/Q4-repeat/artifacts/check_model.py' 1> (Join-Path $artifacts 'stdout.txt') 2> (Join-Path $artifacts 'stderr.txt')
+artifacts variable: {{RUN_ROOT}}/Q4-repeat/artifacts
+Exact executed script: check_model.py
+STDOUT:
+MODEL: exact Python equality; no 1C runtime
+sample result: [[1, "A", 10, true], [2, "B", 20, true], [3, "A", 10, true], [4, "C", 0, false], [5, "Z", 0, true]]
+Analytical BSL invocation count for sample: original=5; proposed=1 packet (2 statements); not measured in 1C
+PASS empty []
+PASS one-present [[90, "A", 10, true]]
+PASS one-missing [[90, "C", 0, false]]
+PASS one-zero [[90, "Z", 0, true]]
+PASS all-missing [[31, "A", 0, false], [2, "B", 0, false]]
+PASS repeats-and-order [[31, "A", 10, true], [2, "B", 20, true], [9, "A", 10, true]]
+PASS empty-string-key [[7, "", 0, true], [4, "C", 0, false]]
+PASS exhaustive exact-equality finite model datasets: 3267
+PASS illustrative ASCII equality predicate: [[41, "a", 10, true], [2, "A ", 10, true], [11, "A", 10, true], [8, "b ", 0, true], [19, "missing", 0, false]]
+COUNTEREXAMPLE toy query equality vs exact string dictionary: 'a' and 'A ' miss
+BOUNDARY: ASCII predicate does not validate 1C collation or Unicode rules
+COUNTEREXAMPLE returning price rows only: 3 returned vs 5 required source results
+PASS static text checks (not a BSL parser/compiler)
+ALL MODEL CHECKS PASSED
+
+STDERR:
+
+EXIT CODE: 0

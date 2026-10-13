@@ -1,0 +1,11 @@
+{
+  "stage": "syntax-review-final",
+  "started_at_utc": "2026-10-13T00:29:15.5789275Z",
+  "arguments": "DESIGNER /F \"{{RUN_ROOT}}\\platform/base-final\" /CheckConfig -Server -ThinClient /Out \"{{RUN_ROOT}}\\platform/syntax-review-final.log\" /DumpResult \"{{RUN_ROOT}}\\platform/syntax-review-final.result\" /L ru /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:29:16.4196575Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

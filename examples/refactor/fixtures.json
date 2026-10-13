@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {"quantity": "2", "price": "0.503", "discount": "20", "expected": "0.81"},
+    {"quantity": "0", "price": "10", "discount": "15", "expected": "0.00"},
+    {"quantity": "2", "price": "10.12", "discount": "0", "expected": "20.24"},
+    {"quantity": "2", "price": "10.12", "discount": "100", "expected": "0.00"},
+    {"quantity": "-2", "price": "0.503", "discount": "20", "expected": "-0.81"}
+  ],
+  "rounding_model": "Decimal ROUND_HALF_UP; выбранные ожидаемые результаты не зависят от обработки точной половины"
+}

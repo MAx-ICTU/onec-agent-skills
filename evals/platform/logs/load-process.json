@@ -1,0 +1,11 @@
+{
+  "stage": "load",
+  "started_at_utc": "2026-10-13T00:15:17.6666096Z",
+  "arguments": "DESIGNER /F \"{{RUN_ROOT}}\\platform\\base\" /LoadConfigFromFiles \"{{RUN_ROOT}}\\platform\\config\" /UpdateDBCfg /Out \"{{RUN_ROOT}}\\platform\\load.log\" /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:15:18.6109774Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 1,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

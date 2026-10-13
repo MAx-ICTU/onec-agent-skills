@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-13",
+  "evaluation_preparation_started_utc": "2026-10-13T00:07:17.391678+00:00",
+  "tool": "Codex desktop: collaboration.spawn_agent",
+  "fork_turns": "none",
+  "model": {
+    "selection": "inherited from parent; no model or reasoning override",
+    "exact_identifier": null,
+    "llm_seed": null,
+    "limitation": "The spawning API did not return the exact model identifier, reasoning setting or seed. Shared service/system instructions were not controlled."
+  },
+  "allowed": [
+    "Read only the assigned input packet",
+    "Write only own artifacts",
+    "Execute saved standard-library Python models"
+  ],
+  "excluded": [
+    "after/expected",
+    "author rubric and diagnosis",
+    "previous answers",
+    "other agents",
+    "project README and reports",
+    "Internet",
+    "1C access in evaluator context"
+  ],
+  "response_preservation": "response.md, proposed code, input data and model scripts copied byte-for-byte; checks.txt only has local paths replaced and UTF-8/newlines normalized. Raw-file SHA256 below precedes normalization.",
+  "assessment": "Author assessment after receiving each answer; not independent expert certification or a comparison with no skill.",
+  "cases": {
+    "Q2": {
+      "agent_task": "/root/query_q2_final",
+      "revision": "initial",
+      "input_hashes": {
+        "before.query": "460cc302bd4ab0bee0b16afae450f9a0bebcb073ab339a4862abeb98862f2a9a",
+        "data.json": "b8861c26ca39595d9dab85b5cfd75ec7056439b076d4f419b53f5a0ed118b236",
+        "skill/references/query-pitfalls.md": "4e61eb11b0efdfee68a0e3f5a690fde27fa13cb4026e4b00cb6e3e4f0be1213c",
+        "skill/SKILL.md": "6dfc9c7474c43e5fb0a755dee0536964c6ae394279c643df0c3a7f18bb03df81",
+        "task.md": "b5e237c9749d468d6ff86c91b415649d3d379204eca028492150054d8dbff735"
+      },
+      "raw_artifact_sha256": {
+        "checks.txt": "dcc669614c06a04f27f9f3a6cb2a4b56744e9ba86355357473f5154c1ccd12af",
+        "proposed.query": "fbb02cc952996a23f1c8a6574fabb294eadc5485a28a1e7bd93e114c76ca526b",
+        "response.md": "c9d86fcaf5ed084233ae6ccdbb1f1036152becaa6bebb059f4d5956fd94d0379",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "4ce3a99b08ce5de2fbf92a955cba4f97be3aa1a8aec2afdcd84b346d589181d7",
+        "verify.py": "014cc390904d52b26a39dafebca78520467fa98c44ea099a0d8be9ae2e65bed2"
+      },
+      "verdict": "pass",
+      "evaluator_1c": "not available; platform execution done later by author in a separate harness"
+    },
+    "Q3": {
+      "agent_task": "/root/query_q3_final",
+      "revision": "initial",
+      "input_hashes": {
+        "before.query": "4a6b2ed679e94bfe9f5992bc255ae53e996cb738499d606628635eb036daea48",
+        "data.json": "ac1a8386dd3ea2e7bfc8acfa4c1c68ada395b98b9de78c066bd329c27b039df9",
+        "skill/references/query-pitfalls.md": "4e61eb11b0efdfee68a0e3f5a690fde27fa13cb4026e4b00cb6e3e4f0be1213c",
+        "skill/SKILL.md": "6dfc9c7474c43e5fb0a755dee0536964c6ae394279c643df0c3a7f18bb03df81",
+        "task.md": "137c5c8f4a2e13249964edca3ea421ef750195c823076196df3ac8ad94f19b39"
+      },
+      "raw_artifact_sha256": {
+        "checks.txt": "74f3fdfa7b47e9b381d9032f970bd6f5469735b2d697fdafbbe2fa9791d8e382",
+        "check_model.py": "0fb7396f79d53ab1ae72d53fb9b72baab9af7e4b365537aea902d8e3e36ac047",
+        "proposed.query": "e9d16e345cc1f0338f40048cb6f11b4ff4719d2bffd107e7e99d736133489ba6",
+        "response.md": "9884973dfdd5f2ff7b343e14f38d44fac2cab2c4a8739769786b4f7d930cca20",
+        "run_checks.py": "1d502fb47a0f4271fbd720c79379d0463e5079efbf6ce6b5432271270cdf1439"
+      },
+      "verdict": "pass",
+      "evaluator_1c": "not available; platform execution done later by author in a separate harness"
+    },
+    "Q4": {
+      "agent_task": "/root/query_q4_final",
+      "revision": "initial",
+      "input_hashes": {
+        "before.bsl": "5b67bf7360ae33533c170c947c6040fd3e3cf5f4d51f18bab74d048cd65d28e1",
+        "data.json": "59f0e0aece231429062e7f7100e42ce57c5b660e2d472a5967a0aada11db6813",
+        "skill/references/query-pitfalls.md": "4e61eb11b0efdfee68a0e3f5a690fde27fa13cb4026e4b00cb6e3e4f0be1213c",
+        "skill/SKILL.md": "6dfc9c7474c43e5fb0a755dee0536964c6ae394279c643df0c3a7f18bb03df81",
+        "task.md": "0e4b2f415d063fc7ee392fbc81169d9202a117b35f12981d9abbf604abdd267f"
+      },
+      "raw_artifact_sha256": {
+        "checks.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "checks.txt": "9a3a4a2c20ed71536f170443a17644189ebaa625eeeaebb401f52ba5627d646c",
+        "proposed.bsl": "51e4e9dafe8f45abc501d1a3b3500dd1558a1d97c0240344d4c29500c20ef547",
+        "response.md": "ea1a0b382f20f3ec7c4633937b615c6a43f4b66a9f8d56dc6452ec6148a4c10f",
+        "verify_model.py": "95079928534e470e080a6efedb04e4d22b8b36aa5330847dcbb7b51eedfae87d"
+      },
+      "verdict": "pass",
+      "evaluator_1c": "not available; platform execution done later by author in a separate harness"
+    },
+    "Q4-repeat": {
+      "agent_task": "/root/query_q4_repeat",
+      "revision": "string-comparison",
+      "input_hashes": {
+        "before.bsl": "5b67bf7360ae33533c170c947c6040fd3e3cf5f4d51f18bab74d048cd65d28e1",
+        "data.json": "59f0e0aece231429062e7f7100e42ce57c5b660e2d472a5967a0aada11db6813",
+        "skill/references/query-pitfalls.md": "cb4c646dbe1033ea3947022dc692ded5a909ab4f3fc59c3e493df2fcc4cee4a9",
+        "skill/SKILL.md": "6dfc9c7474c43e5fb0a755dee0536964c6ae394279c643df0c3a7f18bb03df81",
+        "task.md": "0e4b2f415d063fc7ee392fbc81169d9202a117b35f12981d9abbf604abdd267f"
+      },
+      "raw_artifact_sha256": {
+        "checks.txt": "9874a077473b14a7fc03a4febd37e8d4d110e4b4a625ab0f05bcad51540198cf",
+        "check_model.py": "d8b09b186249ac2cf408fd39430d0572666924692f8524f6c15910b456a702ec",
+        "proposed.bsl": "a40abf4e5758561630b65132cf5448954950cd21a075d56a0c2699fb530a0538",
+        "response.md": "02a5e2108f78920e9ef1a339efb4d8fc84415462c946c92a4cc3d9247a3e0186",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout.txt": "1c31bde0737d204a13a4ec425bcade9c5644d932050616e2fc0f3714ace18eb0"
+      },
+      "verdict": "pass",
+      "evaluator_1c": "not available; platform execution done later by author in a separate harness"
+    }
+  }
+}

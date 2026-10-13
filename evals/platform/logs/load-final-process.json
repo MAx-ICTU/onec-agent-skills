@@ -1,0 +1,11 @@
+{
+  "stage": "load-final",
+  "started_at_utc": "2026-10-13T00:29:12.4382249Z",
+  "arguments": "DESIGNER /F \"{{RUN_ROOT}}\\platform/base-final\" /LoadConfigFromFiles \"{{RUN_ROOT}}\\platform/config\" /UpdateDBCfg /Out \"{{RUN_ROOT}}\\platform/load-final.log\" /DumpResult \"{{RUN_ROOT}}\\platform/load-final.result\" /L ru /DisableStartupDialogs /DisableStartupMessages /DisableSplash",
+  "finished_at_utc": "2026-10-13T00:29:13.6280616Z",
+  "completed_before_timeout": true,
+  "process_exit_code": 0,
+  "platform_version": "8.5.1.1150",
+  "edition": "training",
+  "add_to_infobase_list": false
+}

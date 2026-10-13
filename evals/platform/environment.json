@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-13",
+  "edition": "1C:Enterprise training",
+  "version": "8.5.1.1150",
+  "compatibility": "Version8_5_1",
+  "database": "new isolated file database; synthetic records only; not added to user infobase list",
+  "runtime_client": "managed thick client (1cv8t.exe)",
+  "syntax_contexts": [
+    "Server",
+    "ThinClient"
+  ],
+  "roles": "no configured users/roles; unrestricted reading; no RLS tested",
+  "syntax_result": "No errors; process exit code 0",
+  "runtime_assertion_lines": 46,
+  "runtime_result": "ALL EXECUTED ASSERTIONS PASSED; process exit code 0",
+  "note": "Exit code 0 alone was not treated as assertion success; earlier failing runtime also exited 0.",
+  "source_path_normalization": "source uses {{RUN_ROOT}} and {{PROJECT_ROOT}} in place of local absolute paths; UTF-8 without BOM",
+  "discovery": "PATH and standard 1cv8 directories were empty; registry revealed training installation in 1cv8t. Earlier no-platform conclusion was incomplete."
+}

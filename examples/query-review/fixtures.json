@@ -1,0 +1,29 @@
+{
+  "slice_last": {
+    "date": "2026-01-03T00:00:00", "source": "ручной",
+    "records": [
+      {"period": "2026-01-01T00:00:00", "item": "A", "source": "ручной", "price": 10},
+      {"period": "2026-01-02T00:00:00", "item": "A", "source": "импорт", "price": 12},
+      {"period": "2026-01-01T00:00:00", "item": "B", "source": "ручной", "price": 20}
+    ],
+    "expected_original": [["B", 20]],
+    "expected_proposed": [["A", 10], ["B", 20]]
+  },
+  "joins": {
+    "sales": [[1, "A", 100], [2, "A", 100], [3, "B", 50]],
+    "tags": [["A", "T1", 1], ["A", "T2", 1], ["B", "T3", 0]],
+    "expected_wrong_sum": 400, "expected_sum": 200,
+    "expected_correct_grouping": [["A", 200], ["B", 50]]
+  },
+  "left_join": {
+    "items": ["A", "B", "C"],
+    "permissions": [["A", 1, "допущен"], ["B", 0, "закрыт"]],
+    "expected_before": [["A", "допущен"]],
+    "expected_after": [["A", "допущен"], ["B", null], ["C", null]]
+  },
+  "batch": {
+    "rows": [[1, "A"], [2, "B"], [3, "A"], [4, "C"], [5, "Z"]],
+    "prices": [["A", 10], ["B", 20], ["Z", 0]],
+    "expected": [[1, "A", 10, true], [2, "B", 20, true], [3, "A", 10, true], [4, "C", 0, false], [5, "Z", 0, true]]
+  }
+}
